@@ -1,0 +1,158 @@
+:root {
+  --scrollbar-color: #a6b182;
+
+  --pale-spring-bud: #ccd5aeff;
+  --light-goldenrod-yellow: #e9edc9ff;
+  --cornsilk: #fefae0ff;
+  --papaya-whip: #faedcdff;
+  --fawn: #d4a373ff;
+
+  --dark-link-text: rgb(40, 40, 40);
+
+  --cta-btn-font: "Pacifico", cursive;
+  --title-font: "Dancing Script", cursive;
+  --logo-font: "";
+}
+
+.tree {
+  margin: 6rem 1rem;
+  overflow: auto;
+  width: max-content;
+}
+
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li::before,
+.tree li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid var(--fawn);
+  width: 50%;
+  height: 20px;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid var(--fawn);
+}
+
+.tree li:only-child::after,
+.tree li:only-child::before {
+  display: none;
+}
+
+.tree li:only-child {
+  padding-top: 0;
+}
+
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: 0 none;
+}
+
+.tree li:last-child::before {
+  border-right: 2px solid var(--fawn);
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid var(--fawn);
+  width: 0;
+  height: 20px;
+}
+
+.tree li span {
+  border: 2px solid var(--fawn);
+  padding: 0.2rem 0.5rem;
+  text-decoration: none;
+  color: #666;
+  font-size: 1.1rem;
+  display: inline-block;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li span button {
+  background: none;
+  border: none;
+}
+
+.popover .popover-header {
+  width: 100%;
+  height: 100%;
+  background-color: var(--fawn);
+  border: none;
+  color: var(--cornsilk);
+}
+
+.popover .popover-body span {
+  display: block;
+}
+
+.popover .popover-body .fa-skull {
+  margin-left: 0.2rem;
+  opacity: 0.6;
+}
+
+.tree li span button b {
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+.tree li span:hover,
+.tree li span:hover + ul li span {
+  background: var(--pale-spring-bud);
+  border: 2px solid var(--pale-spring-bud);
+}
+
+.tree li span button:hover b {
+  text-decoration: none;
+}
+.tree li span button:hover {
+  text-decoration: underline;
+}
+
+.tree li span:hover + ul li::after,
+.tree li span:hover + ul li::before,
+.tree li span:hover + ul::before,
+.tree li span:hover + ul ul::before {
+  border-color: var(--pale-spring-bud);
+}
