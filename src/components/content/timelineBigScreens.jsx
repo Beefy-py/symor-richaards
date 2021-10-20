@@ -16,8 +16,8 @@ const TimelineBigScreens = ({ styling }) => {
           January 1 1980
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineDot sx={{ background: "success.main" }} />
-          <TimelineConnector />
+          <TimelineDot sx={{ background: "var(--pale-spring-bud)" }} />
+          <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
           <b>Event 1: </b> Lorem, ipsum dolor sit amet consectetur, adipisicing
@@ -29,8 +29,8 @@ const TimelineBigScreens = ({ styling }) => {
           August 5 1997
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineDot sx={{ background: "red" }} />
-          <TimelineConnector />
+          <TimelineDot sx={{ background: "var(--pale-spring-bud)" }} />
+          <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
           <b>Event 2:</b> Nostrum dolores ducimus exercitationem quibusdam.
@@ -42,8 +42,8 @@ const TimelineBigScreens = ({ styling }) => {
           April 10 2005
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineDot sx={{ background: "red" }} />
-          <TimelineConnector />
+          <TimelineDot sx={{ background: "var(--pale-spring-bud)" }} />
+          <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
           <b>Event 3: </b>Aut a placeat eum! Cupiditate, optio?
@@ -54,8 +54,8 @@ const TimelineBigScreens = ({ styling }) => {
           July 14 2021
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineDot sx={{ background: "red" }} />
-          <TimelineConnector />
+          <TimelineDot sx={{ background: "var(--pale-spring-bud)" }} />
+          <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
           <b>Event 4: </b>Quisquam excepturi accusantium modi fugit nam est.
