@@ -709,14 +709,10 @@ footer .copyright a:hover {
     right: 1rem;
     top: 3rem;
   }
-  /* 
-  .cta-info {
-    left: 20%;
-  }
 
-  .cta-info hr {
-    width: 50%;
-  } */
+  .cta-info h1 {
+    font-size: 1.7rem;
+  }
 
   .history-section {
     flex-direction: column;

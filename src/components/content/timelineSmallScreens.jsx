@@ -12,8 +12,8 @@ const TimelineSmallScreens = ({ styling }) => {
     <Timeline position="right">
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
+          <TimelineDot sx={{ background: "var(--pale-spring-bud)" }} />
+          <TimelineConnecto sx={{ background: "var(--pale-spring-bud)" }} r />
         </TimelineSeparator>
         <TimelineContent>
           <b> January 1 1980: </b> Lorem, ipsum dolor sit amet consectetur,
@@ -22,8 +22,8 @@ const TimelineSmallScreens = ({ styling }) => {
       </TimelineItem>
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
+          <TimelineDot sx={{ background: "var(--pale-spring-bud)" }} />
+          <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent>
           <b>August 5 1997:</b> Nostrum dolores ducimus exercitationem
@@ -32,8 +32,8 @@ const TimelineSmallScreens = ({ styling }) => {
       </TimelineItem>
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
+          <TimelineDot sx={{ background: "var(--pale-spring-bud)" }} />
+          <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent>
           <b>April 10 2005:</b> Nostrum dolores ducimus exercitationem
@@ -42,7 +42,7 @@ const TimelineSmallScreens = ({ styling }) => {
       </TimelineItem>
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent>
           <b>July 14 2021:</b> Nostrum dolores ducimus exercitationem quibusdam.

@@ -113,7 +113,6 @@
 .tree li span button {
   background: none;
   border: none;
-  font-size: 0.8rem !important;
 }
 
 .popover .popover-header {
@@ -156,4 +155,10 @@
 .tree li span:hover + ul::before,
 .tree li span:hover + ul ul::before {
   border-color: var(--pale-spring-bud);
+}
+
+@media only screen and (max-width: 768px) {
+  .tree li span button {
+    font-size: 0.8rem !important;
+  }
 }
