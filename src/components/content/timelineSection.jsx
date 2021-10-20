@@ -3,7 +3,9 @@ import TimelineSmallScreens from "./timelineSmallScreens";
 import TimelineBigScreens from "./timelineBigScreens";
 
 const TimelineSection = ({ doIntersectionAnimation }) => {
-  const customStyling = { fontFamily: "inherit" };
+  const customStyling = {
+    fontFamily: "inherit",
+  };
   const screenWidth = window.innerWidth;
 
   return (

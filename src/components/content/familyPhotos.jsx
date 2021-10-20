@@ -25,6 +25,14 @@ export default class FamilyPhotos extends Component {
     };
   }
 
+  // state = {
+  //   offset: 0,
+  //   photos: [],
+  //   perPage: 6,
+  //   currentPage: 0,
+  //   modalShow: false,
+  // };
+
   htmlImagesData() {
     axios.get(apiUrl).then((res) => {
       const data = res.data;
@@ -86,14 +94,12 @@ export default class FamilyPhotos extends Component {
           show={this.state.modalShow}
           onHide={() => this.setState({ modalShow: false })}
         />
-
         <header>
           <h1>Gallery</h1>
           <button onClick={() => this.setState({ modalShow: true })}>
             Add Photo
           </button>
         </header>
-
         <div className="items">{this.state.imagesData}</div>
         <ReactPaginate
           previousLabel={<i className="fas fa-arrow-left"></i>}
@@ -108,6 +114,7 @@ export default class FamilyPhotos extends Component {
           subContainerClassName={"pages pagination"}
           activeClassName={"active"}
         />
+        )
       </section>
     );
   }

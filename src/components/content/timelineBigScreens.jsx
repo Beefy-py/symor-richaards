@@ -16,7 +16,7 @@ const TimelineBigScreens = ({ styling }) => {
           January 1 1980
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot sx={{ background: "success.main" }} />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
@@ -29,7 +29,7 @@ const TimelineBigScreens = ({ styling }) => {
           August 5 1997
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot sx={{ background: "red" }} />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
@@ -42,7 +42,7 @@ const TimelineBigScreens = ({ styling }) => {
           April 10 2005
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot sx={{ background: "red" }} />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
@@ -54,7 +54,7 @@ const TimelineBigScreens = ({ styling }) => {
           July 14 2021
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot sx={{ background: "red" }} />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
