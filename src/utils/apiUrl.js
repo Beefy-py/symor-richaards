@@ -1,3 +1,4 @@
-const apiURL = "http://localhost:8000/api/";
+const URLDev = "http://localhost:8000/api/";
+const URLProd = "http://symor-richaards.herokuapp.com/";
 
-export default apiURL;
+export default URLProd;
