@@ -569,6 +569,11 @@ main {
   box-shadow: 1px 4px 14px rgba(0, 0, 0, 0.2);
 }
 
+.family-tree-modal.modal-fullscreen {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
 .family-tree-modal .modal-content {
   background-color: var(--papaya-whip);
 }
