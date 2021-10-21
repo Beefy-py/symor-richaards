@@ -240,6 +240,11 @@ main {
   font-family: var(--title-font);
 }
 
+.history-section .ver-line {
+  border-left: 3px solid var(--fawn);
+  margin: 0 5rem;
+}
+
 .history-section .text {
   line-height: 1.5rem;
   text-align: justify;
@@ -273,11 +278,6 @@ main {
 
 .MuiTimelineConnector-root span {
   background: linear-gradient(90deg, black, black) !important;
-}
-
-.ver-line {
-  border-left: 3px solid var(--fawn);
-  margin: 0 5rem;
 }
 
 .gallery-section {
@@ -710,6 +710,14 @@ footer .copyright a:hover {
     top: 3rem;
   }
 
+  nav .content .link-active {
+    color: var(--light-goldenrod-yellow);
+  }
+
+  nav .content .link-active i {
+    color: var(--pale-spring-bud);
+  }
+
   .cta-info h1 {
     font-size: 1.7rem;
   }
@@ -722,6 +730,13 @@ footer .copyright a:hover {
   .timeline-section h1 {
     font-size: 3rem;
     margin: 0;
+  }
+
+  .ver-line {
+    border-left: none;
+    border-bottom: 3px solid var(--fawn);
+    margin: 2rem auto !important;
+    width: 80%;
   }
 
   .history-section .text,
@@ -747,8 +762,20 @@ footer .copyright a:hover {
     margin-left: 0;
   }
 
+  .tree-section h1 {
+    font-size: 2rem;
+  }
+
+  .tree-section p {
+    font-size: 0.9rem;
+  }
+
   .tree-section p i:last-child {
     color: rgb(241, 173, 105);
+  }
+
+  .tree-section button {
+    font-size: 1rem;
   }
 
   footer {
