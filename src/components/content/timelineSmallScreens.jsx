@@ -13,7 +13,7 @@ const TimelineSmallScreens = ({ styling }) => {
       <TimelineItem>
         <TimelineSeparator>
           <TimelineDot sx={{ background: "var(--pale-spring-bud)" }} />
-          <TimelineConnecto sx={{ background: "var(--pale-spring-bud)" }} r />
+          <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent>
           <b> January 1 1980: </b> Lorem, ipsum dolor sit amet consectetur,
