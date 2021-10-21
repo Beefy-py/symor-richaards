@@ -114,7 +114,6 @@ export default class FamilyPhotos extends Component {
           subContainerClassName={"pages pagination"}
           activeClassName={"active"}
         />
-        )
       </section>
     );
   }
