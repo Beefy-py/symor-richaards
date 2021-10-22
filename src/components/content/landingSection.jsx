@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-scroll";
+import { withTranslation } from "react-i18next";
 
-export default class LandingSection extends Component {
+class LandingSection extends Component {
   render() {
+    const { t } = this.props;
+
     return (
       <div className="view" id="intro">
         <div className="page-bg">
           <div className="cta-info">
             <h1>
-              The<span> Symor-Richaards Family</span> <br /> and
-              <span> Descendants</span>
+              {t("text1-cta")}
+              <span> Symor-Richaards {t("text2-cta")}</span> <br />{" "}
+              {t("text3-cta")}
+              <span> {t("text4-cta")}</span>
             </h1>
             <hr />
             <button>
@@ -20,7 +25,7 @@ export default class LandingSection extends Component {
                 offset={-300}
                 duration={500}
               >
-                About The Family
+                {t("button-cta")}
               </Link>
             </button>
           </div>
@@ -36,3 +41,5 @@ export default class LandingSection extends Component {
     );
   }
 }
+
+export default withTranslation()(LandingSection);

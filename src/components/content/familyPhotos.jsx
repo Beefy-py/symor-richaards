@@ -7,8 +7,9 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import ReactPaginate from "react-paginate";
 import { useAlert } from "react-alert";
+import { withTranslation, useTranslation } from "react-i18next";
 
-export default class FamilyPhotos extends Component {
+class FamilyPhotos extends Component {
   componentDidMount() {
     this.htmlImagesData();
   }
@@ -24,14 +25,6 @@ export default class FamilyPhotos extends Component {
       modalShow: false,
     };
   }
-
-  // state = {
-  //   offset: 0,
-  //   photos: [],
-  //   perPage: 6,
-  //   currentPage: 0,
-  //   modalShow: false,
-  // };
 
   htmlImagesData() {
     axios.get(apiUrl).then((res) => {
@@ -83,6 +76,8 @@ export default class FamilyPhotos extends Component {
   };
 
   render() {
+    const { t } = this.props;
+
     return (
       <section
         className="gallery-section"
@@ -95,9 +90,9 @@ export default class FamilyPhotos extends Component {
           onHide={() => this.setState({ modalShow: false })}
         />
         <header>
-          <h1>Gallery</h1>
+          <h1>{t("gallery-title")}</h1>
           <button onClick={() => this.setState({ modalShow: true })}>
-            Add Photo
+            {t("add-photo")}
           </button>
         </header>
         <div className="items">{this.state.imagesData}</div>
@@ -125,17 +120,16 @@ function AddPhotoModal(props) {
   const [formErrors, setFormErrors] = useState({ image: "", caption: "" });
 
   const alert = useAlert();
+  const { t } = useTranslation();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (!photo.image) {
       props.onHide();
-      alert.show("Failed to add a photo.");
+      alert.show(t("photo-add-fail"));
       return;
     }
-
-    console.log(photo.image);
 
     setValidated(true);
 
@@ -147,6 +141,8 @@ function AddPhotoModal(props) {
       .post(apiUrl, formData)
       .then((res) => props.onHide())
       .catch((res) => console.log(res.response));
+
+    window.location.reload();
   };
 
   const handleChange = (event) => {
@@ -163,7 +159,7 @@ function AddPhotoModal(props) {
       if (event.target.value.length >= 200)
         setFormErrors({
           image: "",
-          caption: "Caption should be less then 200 characters.",
+          caption: t("caption-error"),
         });
       else setFormErrors({ image: "", caption: "" });
     }
@@ -181,13 +177,13 @@ function AddPhotoModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Adding A Photo ...
+          {t("adding-photo")}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form noValidate validated={validated}>
           <Form.Group controlId="formFile" className="mb-3">
-            <Form.Label>Select A Photo</Form.Label>
+            <Form.Label>{t("select-photo")}</Form.Label>
             <Form.Control
               type="file"
               required
@@ -196,7 +192,7 @@ function AddPhotoModal(props) {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Caption</Form.Label>
+            <Form.Label>{t("caption")}</Form.Label>
             {formErrors.caption && (
               <div className="error">
                 {formErrors.caption}
@@ -214,12 +210,14 @@ function AddPhotoModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide} variant="warning">
-          Cancel
+          {t("cancel")}
         </Button>
         <Button onClick={handleSubmit} variant="success">
-          Add Photo
+          {t("add-photo")}
         </Button>
       </Modal.Footer>
     </Modal>
   );
 }
+
+export default withTranslation()(FamilyPhotos);

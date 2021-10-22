@@ -7,6 +7,7 @@ import { CloseButton } from "react-bootstrap";
 import { useAlert } from "react-alert";
 import axios from "axios";
 import apiURL from "./../../utils/apiUrl";
+import { useTranslation } from "react-i18next";
 
 const SinglePhoto = ({ photo }) => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -107,7 +108,7 @@ function ImageModal(props) {
               </div>
 
               <div className="caption">
-                {!props.imgCap === "NULL" ? "" : <p> {props.imgCap}</p>}
+                {props.imgCap === "null" ? "" : <p> {props.imgCap}</p>}
               </div>
             </div>
           )}
@@ -126,6 +127,8 @@ function DeletePhotoModal({ show, setShowModal, imgCap, imgId }) {
     window.location.reload();
   };
 
+  const { t } = useTranslation();
+
   return (
     <Modal
       show={show}
@@ -135,18 +138,18 @@ function DeletePhotoModal({ show, setShowModal, imgCap, imgId }) {
       keyboard={false}
     >
       <Modal.Header closeButton>
-        <Modal.Title>Deleting Image</Modal.Title>
+        <Modal.Title>{t("del-img")}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        Are you sure you want to <strong>delete this photo</strong> with
-        caption: [<i>{imgCap}</i>] ?
+        {t("del-img-text1")} <strong>{t("del-img-text2")}</strong>{" "}
+        {t("del-img-text3")}[<i>{imgCap}</i>] ?
       </Modal.Body>
       <Modal.Footer>
         <Button variant="primary" onClick={() => setShowModal(false)}>
-          Cancel
+          {t("cancel")}
         </Button>
         <Button variant="danger" onClick={() => doPhotoDeletion(imgId)}>
-          Delete
+          {t("delete")}
         </Button>
       </Modal.Footer>
     </Modal>
@@ -154,6 +157,8 @@ function DeletePhotoModal({ show, setShowModal, imgCap, imgId }) {
 }
 
 function UpdatePhotoModal({ show, setShowModal, imgSrc, imgCap, imgId }) {
+  const { t } = useTranslation();
+
   const [validated, setValidated] = React.useState(false);
   const [photo, setPhoto] = React.useState({ caption: "" });
   const [formErrors, setFormErrors] = React.useState({
@@ -185,7 +190,7 @@ function UpdatePhotoModal({ show, setShowModal, imgSrc, imgCap, imgId }) {
     if (event.target.name === "caption") {
       if (event.target.value.length >= 200)
         setFormErrors({
-          caption: "Caption should be less then 200 characters.",
+          caption: t("caption-error"),
         });
       else setFormErrors({ caption: "" });
     }
@@ -202,12 +207,12 @@ function UpdatePhotoModal({ show, setShowModal, imgSrc, imgCap, imgId }) {
       keyboard={false}
     >
       <Modal.Header closeButton>
-        <Modal.Title>Updating Image</Modal.Title>
+        <Modal.Title>{t("upd-img")}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form noValidate validated={validated}>
           <Form.Group className="mb-3">
-            <Form.Label>Caption</Form.Label>
+            <Form.Label>{t("caption")}</Form.Label>
             {formErrors.caption && (
               <div className="error">
                 {formErrors.caption}
@@ -226,10 +231,10 @@ function UpdatePhotoModal({ show, setShowModal, imgSrc, imgCap, imgId }) {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="primary" onClick={() => setShowModal(false)}>
-          Cancel
+          {t("cancel")}
         </Button>
         <Button variant="danger" onClick={handleSubmit}>
-          Update
+          {t("upd")}
         </Button>
       </Modal.Footer>
     </Modal>

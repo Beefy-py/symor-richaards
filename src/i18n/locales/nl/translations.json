@@ -1,0 +1,50 @@
+{
+  "history-nav": "Geschiedenis",
+  "photos-nav": "Foto's",
+  "timeline-nav": "Tijdlijn",
+  "famtree-nav": "Stamboom",
+  "scroll-top": "Naar de top",
+
+  "text1-cta": "De",
+  "text2-cta": "Familie",
+  "text3-cta": "En",
+  "text4-cta": "Afstammelingen",
+  "button-cta": "Over de familie",
+
+  "history-title": "Geschiedenis",
+
+  "gallery-title": "Galerij",
+  "adding-photo": "Een foto toevoegen...",
+  "select-photo": "Selecteer een foto",
+
+  "timeline-title": "Tijdlijn",
+  "event1": "Gebeurtenis 1",
+  "event2": "Gebeurtenis 2",
+  "event3": "Gebeurtenis 3",
+  "event4": "Gebeurtenis 4",
+  "oh-snap": "Oh nee! Je hebt een fout!",
+  "photo-add-fail": "Kan geen foto toevoegen.",
+  "del-img": "Afbeelding verwijderen",
+  "del-img-text1": "Weet je zeker dat je",
+  "del-img-text2": "deze foto wilt verwijderen",
+  "del-img-text3": "met het bijschrift: ",
+  "upd-img": "Afbeelding bijwerken...",
+  "upd": "Opslaan",
+
+  "famtree-title": "De stamboom",
+  "famtree-text": "De familiebloedlijn begon met",
+  "view-btn": "Weergave",
+
+  "footer-review": "Weerzien",
+  "footer-used": "Gebruikte bronnen",
+  "big-text": "Website van de familie Symor-Richaards",
+  "made-text1": "Gemaakt met",
+  "made-text2": "en genot door ",
+
+  "cancel": "Annuleer",
+  "delete": "Verwijderen",
+  "add-photo": "Voeg Foto Toe",
+  "caption": "Bijschrift",
+  "caption-error": "Bijschrift mag niet langer zijn dan 200 letters!",
+  "change-lan": "Taal veranderen"
+}

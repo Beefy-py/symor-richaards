@@ -7,8 +7,11 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
+import { useTranslation } from "react-i18next";
 
 const TimelineBigScreens = ({ styling }) => {
+  const { t } = useTranslation();
+
   return (
     <Timeline position="alternate">
       <TimelineItem>
@@ -20,8 +23,8 @@ const TimelineBigScreens = ({ styling }) => {
           <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
-          <b>Event 1: </b> Lorem, ipsum dolor sit amet consectetur, adipisicing
-          elit. Necessitatibus, architecto.
+          <b>{t("event1")}: </b> Lorem, ipsum dolor sit amet consectetur,
+          adipisicing elit. Necessitatibus, architecto.
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -33,8 +36,8 @@ const TimelineBigScreens = ({ styling }) => {
           <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
-          <b>Event 2:</b> Nostrum dolores ducimus exercitationem quibusdam.
-          Tempora eaque odio voluptate eum totam minima.
+          <b>{t("event2")}:</b> Nostrum dolores ducimus exercitationem
+          quibusdam. Tempora eaque odio voluptate eum totam minima.
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -46,7 +49,7 @@ const TimelineBigScreens = ({ styling }) => {
           <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
-          <b>Event 3: </b>Aut a placeat eum! Cupiditate, optio?
+          <b>{t("event3")}: </b>Aut a placeat eum! Cupiditate, optio?
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -58,7 +61,8 @@ const TimelineBigScreens = ({ styling }) => {
           <TimelineConnector sx={{ background: "var(--pale-spring-bud)" }} />
         </TimelineSeparator>
         <TimelineContent style={{ ...styling }}>
-          <b>Event 4: </b>Quisquam excepturi accusantium modi fugit nam est.
+          <b>{t("event4")}: </b>Quisquam excepturi accusantium modi fugit nam
+          est.
         </TimelineContent>
       </TimelineItem>
     </Timeline>

@@ -60,6 +60,10 @@ code {
     monospace;
 }
 
+.btns.languages button.not-active {
+  background: none;
+}
+
 nav {
   width: 100%;
   padding: 1rem 2rem;
@@ -122,6 +126,36 @@ nav .nav-btn {
 nav.nav-scrolled .content {
   margin-top: -0.5rem;
   padding: 0.5rem;
+}
+
+nav .content .btns {
+  float: right;
+  border-radius: 0.2rem;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+nav .content .btns button {
+  font-weight: bold;
+  margin: 0.1rem;
+  background: var(--pale-spring-bud);
+  font-size: small;
+  box-shadow: none;
+}
+
+nav .content .btns button.not-active {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+nav.nav-scrolled .btns button {
+  background: var(--papaya-whip);
+}
+
+nav.nav-scrolled .btns {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav.nav-scrolled .btns button.not-active {
+  color: papayawhip;
 }
 
 nav.nav-scrolled {
@@ -569,10 +603,10 @@ main {
   box-shadow: 1px 4px 14px rgba(0, 0, 0, 0.2);
 }
 
-.family-tree-modal.modal-fullscreen {
+/* .family-tree-modal.modal-fullscreen {
   max-width: 100% !important;
   overflow: hidden !important;
-}
+} */
 
 .family-tree-modal .modal-content {
   background-color: var(--papaya-whip);
@@ -623,6 +657,23 @@ footer .made-by p {
 
 footer .made-by p a {
   font-weight: bold;
+}
+
+footer .made-by .btns {
+  width: fit-content;
+}
+
+footer .made-by .btns button {
+  background: #c49567;
+  border-radius: 0rem;
+  border: none;
+  border-right: 0.05rem solid;
+  box-shadow: none;
+}
+
+footer .made-by .btns button:last-child {
+  border: none;
+  border-left: 0.05rem solid;
 }
 
 footer .review ul li a {
@@ -713,6 +764,29 @@ footer .copyright a:hover {
     position: fixed;
     right: 1rem;
     top: 3rem;
+  }
+
+  nav .dropdown-links .btns,
+  nav.nav-scrolled .dropdown-links .btns {
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    background: white;
+  }
+
+  nav .dropdown-links .btns button,
+  nav.nav-scrolled .dropdown-links .btns button {
+    background: var(--pale-spring-bud);
+    box-shadow: none;
+  }
+
+  nav.nav-scrolled .dropdown-links .btns button.not-active {
+    background: none;
+  }
+
+  nav .content .btns button.not-active,
+  nav.nav-scrolled .dropdown-links .btns button.not-active {
+    color: black;
   }
 
   nav .content .link-active {

@@ -2,9 +2,12 @@ import React, { useRef, useState } from "react";
 import { useIntersection } from "react-use";
 import Modal from "react-bootstrap/Modal";
 import FamilyTree from "./familyTree";
+import { useTranslation } from "react-i18next";
 
 const FamilyTreeSection = ({ doIntersectionAnimation }) => {
   const [modalShow, setModalShow] = useState(false);
+
+  const { t } = useTranslation();
 
   const sectionRef = useRef(null);
   const options = {
@@ -31,13 +34,13 @@ const FamilyTreeSection = ({ doIntersectionAnimation }) => {
         setShow={setModalShow}
         onHide={() => setModalShow(false)}
       />
-      <h1>The Family Tree</h1>
+      <h1>{t("famtree-title")}</h1>
       <hr />
       <p>
-        The roots started with <i>Alwin John Symor</i> {"&"}{" "}
+        {t("famtree-text")} <i>Alwin John Symor</i> {"&"}{" "}
         <i>Fredericka Henriëtte Elizabeth Richaards</i>
       </p>
-      <button onClick={() => setModalShow(true)}>View</button>
+      <button onClick={() => setModalShow(true)}>{t("view-btn")}</button>
     </section>
   );
 };

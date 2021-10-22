@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { useIntersection } from "react-use";
+import { useTranslation } from "react-i18next";
 
 const HistorySection = ({ doIntersectionAnimation }) => {
+  const { t } = useTranslation();
+
   const sectionRef = useRef(null);
   const options = {
     root: null,
@@ -25,7 +28,7 @@ const HistorySection = ({ doIntersectionAnimation }) => {
 
   return (
     <section className="history-section" id="history-section" ref={sectionRef}>
-      <h1 id="history-title">History</h1>
+      <h1 id="history-title">{t("history-title")}</h1>
       <div className="ver-line" id="history-line"></div>
       <div className="text" id="history-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni sunt

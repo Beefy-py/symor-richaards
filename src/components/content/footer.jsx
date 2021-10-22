@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-scroll";
+import { withTranslation } from "react-i18next";
+import ChangeLan from "../changeLan";
 
-export default class Footer extends Component {
+class Footer extends Component {
   renderLinks = () => {
     const linkProperties = {
       activeClass: "no",
@@ -11,29 +13,31 @@ export default class Footer extends Component {
       duration: 500,
     };
 
+    const { t } = this.props;
+
     return (
       <React.Fragment>
         <li>
           <Link to="history-section" {...linkProperties}>
-            History
+            {t("history-nav")}
           </Link>
         </li>
 
         <li>
           <Link to="photos-section" {...linkProperties}>
-            Photos
+            {t("photos-nav")}
           </Link>
         </li>
 
         <li>
           <Link to="timeline-section" {...linkProperties}>
-            Timeline
+            {t("timeline-nav")}
           </Link>
         </li>
 
         <li>
           <Link to="family-tree-section" {...linkProperties}>
-            Tree
+            {t("famtree-nav")}
           </Link>
         </li>
       </React.Fragment>
@@ -41,21 +45,25 @@ export default class Footer extends Component {
   };
 
   render() {
+    const { t } = this.props;
+
     return (
       <React.Fragment>
         <a href="https://icons8.com/icon/aXmBVxLw9HVP/tombstone"></a>
         <footer>
           <div className="made-by">
-            <h1>Symor-Richaards Family Website</h1>
+            <h1>{t("big-text")}</h1>
             <p>
-              Made with <i className="fas fa-heart"></i> and excitement by{" "}
+              {t("made-text1")} <i className="fas fa-heart"></i>{" "}
+              {t("made-text2")}
               <a href="" target="_blank">
                 Kenny Hoft
               </a>{" "}
             </p>
+            <ChangeLan />
           </div>
           <div className="recources">
-            <h1>Recources Used</h1>
+            <h1>{t("footer-used")}</h1>
             <ul>
               <li>
                 <a
@@ -89,7 +97,7 @@ export default class Footer extends Component {
             </ul>
           </div>{" "}
           <div className="review">
-            <h1>Review</h1>
+            <h1>{t("footer-review")}</h1>
             <ul>{this.renderLinks()}</ul>
           </div>
           <p className="copyright">
@@ -107,3 +115,5 @@ export default class Footer extends Component {
     );
   }
 }
+
+export default withTranslation()(Footer);

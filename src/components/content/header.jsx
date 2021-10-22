@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-scroll";
 import ReactTooltip from "react-tooltip";
+import { withTranslation } from "react-i18next";
+import ChangeLan from "./../changeLan";
 
-export default class Header extends Component {
+class Header extends Component {
   state = {
     navActive: false,
     showScrollBtn: false,
@@ -41,25 +43,27 @@ export default class Header extends Component {
       duration: 500,
     };
 
+    const { t } = this.props;
+
     return (
       <React.Fragment>
         <Link to="history-section" {...linkProperties}>
-          <i className="fas fa-history"></i> History
+          <i className="fas fa-history"></i> {t("history-nav")}
           <div className="under-line"></div>
         </Link>
 
         <Link to="photos-section" {...linkProperties}>
-          <i className="fas fa-images"></i> Photos
+          <i className="fas fa-images"></i> {t("photos-nav")}
           <div className="under-line"></div>
         </Link>
 
         <Link to="timeline-section" {...linkProperties}>
-          <i className="fas fa-hourglass-start"></i> TimeLine
+          <i className="fas fa-hourglass-start"></i> {t("timeline-nav")}
           <div className="under-line"></div>
         </Link>
 
         <Link to="family-tree-section" {...linkProperties}>
-          <i className="fas fa-sitemap"></i> FamilyTree
+          <i className="fas fa-sitemap"></i> {t("famtree-nav")}
           <div className="under-line"></div>
         </Link>
       </React.Fragment>
@@ -68,13 +72,19 @@ export default class Header extends Component {
 
   render() {
     const { navActive, showScrollBtn } = this.state;
+
+    const { t } = this.props;
+
     return (
       <nav>
         <div className="content">
           <h1>
             <span>Symor</span> - Richaards
           </h1>
-          <div className="links">{this.renderLinks()}</div>
+          <div className="links">
+            {this.renderLinks()}
+            {window.innerWidth > 780 && <ChangeLan />}
+          </div>
           <button className="nav-btn" onClick={this.toggleNavBar}>
             {navActive ? (
               <i className="fas fa-caret-down"></i>
@@ -86,13 +96,14 @@ export default class Header extends Component {
             className={navActive ? "dropdown-links active" : "dropdown-links"}
           >
             {this.renderLinks()}
+            <ChangeLan />
           </div>
         </div>
         {showScrollBtn && (
           <React.Fragment>
             <ReactTooltip />
             <button
-              data-tip="To The Top"
+              data-tip={t("scroll-top")}
               data-place="left"
               className="scroll-to-top"
               onClick={() => window.scrollTo(0, 0)}
@@ -105,3 +116,5 @@ export default class Header extends Component {
     );
   }
 }
+
+export default withTranslation()(Header);

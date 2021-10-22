@@ -3,12 +3,14 @@ import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import "./familyTree.css";
+import "./i18n/config";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { transitions, Provider as AlertProvider } from "react-alert";
 import Alert from "react-bootstrap/Alert";
 // import AlertTemplate from "react-alert-template-basic";
+import { useTranslation } from "react-i18next";
 
 // optional configuration
 const options = {
@@ -20,12 +22,16 @@ const options = {
   transition: transitions.SCALE,
 };
 
-const AlertTemplate = ({ message }) => (
-  <Alert variant="danger">
-    <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-    <p>{message}</p>
-  </Alert>
-);
+const AlertTemplate = ({ message }) => {
+  const { t } = useTranslation();
+
+  return (
+    <Alert variant="danger">
+      <Alert.Heading>{t("oh-snap")}</Alert.Heading>
+      <p>{message}</p>
+    </Alert>
+  );
+};
 
 ReactDOM.render(
   <React.StrictMode>

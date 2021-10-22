@@ -1,0 +1,49 @@
+{
+  "history-nav": "History",
+  "photos-nav": "Photos",
+  "timeline-nav": "Timeline",
+  "famtree-nav": "FamilyTree",
+
+  "text1-cta": "The",
+  "text2-cta": "Family",
+  "text3-cta": "And",
+  "text4-cta": "Descendants",
+  "button-cta": "About the family",
+
+  "history-title": "History",
+
+  "gallery-title": "Gallery",
+  "adding-photo": "Add a photo...",
+  "select-photo": "Select a photo",
+
+  "timeline-title": "Timeline",
+  "event1": "Event 1",
+  "event2": "Event 2",
+  "event3": "Event 3",
+  "event4": "Event 4",
+  "oh-snap": "Oh snap! You got an error!",
+  "photo-add-fail": "Failed to add photo.",
+  "del-img": "Delete photo",
+  "del-img-text1": "Are you sure you want to",
+  "del-img-text2": "delete this photo",
+  "del-img-text3": "with the caption: ",
+  "upd-img": "Update image...",
+  "upd": "Save",
+
+  "famtree-title": "The Family Tree",
+  "famtree-text": "The family bloodline started with",
+  "view-btn": "View",
+
+  "footer-review": "Review",
+  "footer-used": "Used sources",
+  "big-text": "The Symor-Richaards family website",
+  "made-text1": "Developed with",
+  "made-text2": "and enjoyment by ",
+
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "add-photo": "Add Photo",
+  "caption": "Caption",
+  "caption-error": "Caption should not be longer than 200 letters!",
+  "change-lan": "Change language"
+}
